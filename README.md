@@ -1,5 +1,5 @@
-# ancientlm
-ancientlm
+# anchitlm
+Ancient and Chinese lm
 
 ```shell
 pip install jieba zhconv transformers jiayan kenlm
