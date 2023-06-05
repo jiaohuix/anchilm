@@ -25,8 +25,8 @@ tok_dir="EvaHan2023/tok/"
 mkdir -p $tok_dir
 for prefix in train valid
   do
-    python cut_zh.py EvaHan2023/$prefix.gu $tok_dir/$prefix.gu 6 jiayan jiayan_models/jiayan.klm
-    python cut_zh.py EvaHan2023/$prefix.zh $tok_dir/$prefix.zh 6 jieba
+    python scripts/cut_zh.py EvaHan2023/$prefix.gu $tok_dir/$prefix.gu 6 jiayan jiayan_models/jiayan.klm
+    python scripts/cut_zh.py EvaHan2023/$prefix.zh $tok_dir/$prefix.zh 6 jieba
   done
 
 
