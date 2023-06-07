@@ -2,12 +2,18 @@
 bpe_ops=12000
 ## 1.DATA
 DATA_URL="https://bj.bcebos.com/v1/ai-studio-online/ee18ac5bf26b476dafb97229692f0cfdd45ddff669774421b5dfa30fa8b7754a?responseContentDisposition=attachment%3B%20filename%3DEvaHan2023.zip&authorization=bce-auth-v1%2F5cfe9a5e1454405eb2a975c43eace6ec%2F2023-06-05T11%3A13%3A33Z%2F-1%2F%2F715dfee070a19f696a57443a893a5a85aeb404e7600346b3c5aa029915c9cf02"
-wget $DATA_URL -O EvaHan2023.zip
-unzip EvaHan2023.zip
+if [ ! -e EvaHan2023.zip ];then
+  wget $DATA_URL -O EvaHan2023.zip
+  unzip EvaHan2023.zip
+fi
+
+
 ## jiayan model
 JIAYAN_URL="https://bj.bcebos.com/v1/ai-studio-online/ba7cc20a9f7a4a598cf8d5dd4bb8174cd7c0d587912c4d1d9b0a4775d3d4f1c0?responseContentDisposition=attachment%3B%20filename%3Djiayan_models.zip&authorization=bce-auth-v1%2F5cfe9a5e1454405eb2a975c43eace6ec%2F2023-05-05T06%3A46%3A29Z%2F-1%2F%2Ff435166238eb5db107bcfe2bd88a4437e733c717fb4eb09a26eaee126f572495"
-wget $JIAYAN_URL  -O jiayan_models.zip
-unzip jiayan_models.zip
+if [ ! -e jiayan_models.zip ];then
+  wget $JIAYAN_URL  -O jiayan_models.zip
+  unzip jiayan_models.zip
+fi
 
 # 2.SPLIT
 git clone https://gitee.com/miugod/nmt_data_tools
