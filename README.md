@@ -170,7 +170,8 @@ tail gen_bart.txt  # bleu=29.57 (iwslt_de_en)
 apt-get install git-lfs
 git lfs clone https://huggingface.co/SIKU-BERT/sikuroberta
 # 词表映射
-cut -f1 -d" " EvaHan2023/bpe/dict.gu.txt > dict.txt
+echo -e "<s>\n</s>\n<pad>\n<unk>" > dict.txt
+cut -f1 -d" " EvaHan2023/bpe/dict.gu.txt >> dict.txt
 python fairseq_extension/examples/deltalm/map_vocab.py sikuroberta/vocab.txt dict.txt 
 # write to unk.txt success, total 254 lines.
 
