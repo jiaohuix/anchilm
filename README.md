@@ -213,9 +213,11 @@ bash scripts/fine_deltalm_span.sh data-bin/EvaHan2023/ ckpt/deltalm_span_ft ckpt
 ```shell
 # pretrain
 bash scripts/pretrain_deltalm_bart.sh data-bin/lm_data/ ckpt/deltalm_bart_lm/ 8192 20000 top1	
-
+# cp -r data-bin/EvaHan2023 data-bin/EvaHan2023_bart
+# echo  "<mask> 1" >> data-bin/EvaHan2023_bart/dict.zh.txt
+# echo  "<mask> 1" >> data-bin/EvaHan2023_bart/dict.gu.txt
 # finetune 
-bash scripts/fine_deltalm_bart.sh data-bin/EvaHan2023/ ckpt/deltalm_span_ft ckpt/deltalm_bart_lm/checkpoint_best.pt gu zh 8192 60000
+bash scripts/fine_deltalm_span.sh data-bin/EvaHan2023/ ckpt/deltalm_span_ft ckpt/deltalm_bart_lm/checkpoint_best.pt gu zh 8192 60000
 ```
 
 
